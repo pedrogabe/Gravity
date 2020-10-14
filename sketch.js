@@ -21,7 +21,8 @@ function draw() {
 
   for (i in objects) {
     let object = objects[i];
-    /*if (object.x > 400 || object.y > 400 || object.y < 0) {
+    /*if (object.x > 400 || object.x < 0 || object.y > 400 || object.y < 0) {
+      object.p.remove();
       objects.splice(i, 1);
       continue
     }*/ //Destruir objetos al salir del canvas
