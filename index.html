@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Gravity</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <script src="script.js"></script>
     <meta charset="utf-8" />
   </head>
   <body>
+    <div style='position: fixed; top:0; right:0; background-color: rgba(101, 206, 255, 0.568); display: flex;'>
+      <div style='padding: 2px;'><button onclick=toggleCreatorSettings(this)>></button></div>
+      <div id='creatorSettings' style="display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: center; padding: 15px;">
+          <div id="colorSample" style='border-radius: 100%; width:50px; height:50px; background-color: white;'></div>
+        </div>
+        <div>
+          <label>R:</label><input min="0" max="255" maxlength="3" type="number" oninput="updateValues('color',this)" value=255 id="R">
+          <label>G:</label><input min="0" max="255" maxlength="3" type="number" oninput="updateValues('color',this)" value=255 id="G">
+          <label>B:</label><input min="0" max="255" maxlength="3" type="number" oninput="updateValues('color',this)" value=255 id="B">
+        </div>
+
+        <div>
+          <label>Tamaño:</label>
+          <br><input type="number" min="5" max="50" maxlength="2" oninput="updateValues('size',this)" value=20 id="sizeNumber"><input type="range" min="5" max="50" oninput="updateValues('size',this)" value=20 id="sizeRange">
+        </div>
+        <div>
+          <label>Densidad:</label>
+          <br><input type="number" min="0.1" step="0.1" maxlength="4" oninput="updateValues('density',this)" value=1 id="density">
+        </div>
+        <div>
+          <p id='mass'>Masa=20</p>
+        </div>
+        <div>
+          <label>Coeficiente de Gravedad: </label><input type="number" step="0.01" value="0.5" maxlength="2" oninput="updateValues('gravity',this)" id="gravity">
+        </div>
+      </div>
+    </div>
     <script src="sketch.js"></script>
   </body>
 </html>
