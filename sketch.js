@@ -31,7 +31,7 @@ function draw() {
       if (secondObject != object) {
         let angleFirstToSecond = atan((object.y - secondObject.y) / (object.x - secondObject.x))
         let distance = sqrt(pow(object.x - secondObject.x, 2) + pow(object.y - secondObject.y, 2))
-        if (distance < 20) {
+        if (distance < (object.radius/2 + secondObject.radius/2)) {
           object.stroke = 'red'
           secondObject.stroke = 'red'
         } //Detector de colisiones
